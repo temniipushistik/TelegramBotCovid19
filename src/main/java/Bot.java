@@ -122,10 +122,14 @@ public class Bot extends TelegramLongPollingBot {
                         answer(message,"comeback exeption");
                         e.printStackTrace();
                     }
-                    reader.separate(message.getText());
+                    if(reader.separate(message.getText())!="There is no your country"){
+
                     reader.directCatch();
                     answer(message, reader.print());
                     System.out.println(reader.print());
+                    }else{
+                        answer(message,"I can't find the country, try again");
+                    }
 
 
 

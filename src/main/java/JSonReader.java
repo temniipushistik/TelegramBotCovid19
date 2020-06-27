@@ -54,7 +54,7 @@ public class JSonReader {
 
             return result;
         } catch (MalformedURLException e) {
-            return "site is not found";
+            return result = "site is not found";
 
         }
 
@@ -65,7 +65,7 @@ public class JSonReader {
     public String separate(String nameOfCountry) {
         int nameOfCityIndex = result.indexOf(nameOfCountry);
         if (nameOfCityIndex == -1) {
-            return "There is no your country";
+            return  "There is no your country";
         } else {
             int finish = result.indexOf("calculated", nameOfCityIndex);
             storage.setCountry(nameOfCountry);
@@ -102,13 +102,15 @@ public class JSonReader {
     }
 
     public String print() {
-       return "In " + storage.getCountry() + ":" + "\n" +
-                "Cases total: " + storage.getRecoveryTotal() + " Deaths total: " + storage.getDeathsTotal() + "\n" +
-                "New cases today: " + storage.getCasesToday() + " Deaths today: " + storage.getDeathsToday() + " Recoveries today: " + storage.getRecoveredToday()
-        ;
+
+            return "In " + storage.getCountry() + ":" + "\n" +
+                    "Cases total: " + storage.getRecoveryTotal() + " Deaths total: " + storage.getDeathsTotal() + "\n" +
+                    "New cases today: " + storage.getCasesToday() + " Deaths today: " + storage.getDeathsToday() + " Recoveries today: " + storage.getRecoveredToday()
+                    ;
 
 
-    }
+        }
+
 
 
 }
